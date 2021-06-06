@@ -1,0 +1,41 @@
+﻿<Window x:Class="_3D66.Download.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_3D66.Download"
+        mc:Ignorable="d"
+        xmlns:cefwpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        xmlns:c="clr-namespace:_3D66.Download.Controls"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        <TabControl>
+            <TabItem Header="待下载">
+                <ListBox Name="LIST_WaitDownload" Style="{StaticResource LIST_DownloadItems}">
+                </ListBox>
+            </TabItem>
+            <TabItem Header="正在下载">
+                <ListBox Name="LIST_Downloading" Style="{DynamicResource LIST_DownloadItems}">
+                </ListBox>
+            </TabItem>
+            <TabItem Header="已经下载">
+                <ListBox Name="LIST_Downloaded" Style="{DynamicResource LIST_DownloadItems}">
+                </ListBox>
+            </TabItem>
+        </TabControl>
+        <Border HorizontalAlignment="Right" VerticalAlignment="Top" Background="#0C000000" Height="30" BorderBrush="Gray" BorderThickness="0.5">
+            <Label Name="LB_Msg" Foreground="#FF0080FF" Content="" FontSize="15" HorizontalAlignment="Left" MinWidth="200" MaxWidth="350"  VerticalAlignment="Center"/>
+        </Border>
+        <Border HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,30,0,0" Background="#0C000000" Height="30" BorderBrush="Gray" BorderThickness="0.5">
+            <Label Name="LB_Msg_Question" Foreground="Red" Content="" FontSize="15" HorizontalAlignment="Left" MinWidth="200" MaxWidth="350" VerticalAlignment="Center"/>
+        </Border>
+        <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,50">
+            <RadioButton Name="RB_LocalPath" Content="下载到本地" Margin="0,0,150,0"/>
+            <RadioButton Name="RB_URLPath" Content="下载到共享磁盘" IsChecked="True" HorizontalAlignment="Right" />
+        </Grid>
+        <Border HorizontalAlignment="Right" VerticalAlignment="Bottom"  BorderBrush="Gray" BorderThickness="0.5">
+            <TextBox Text="" Name="TEXT_66ID" Grid.Column="1" Style="{StaticResource TEXT_LiuLiuTextBox}" ToolTip="溜溜ID" KeyDown="TEXT_66ID_KeyDown" FontSize="35"  VerticalContentAlignment="Center" Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=local:MainWindow},Path=ActualWidth}"/>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,30 @@
+﻿<Window x:Class="_3D66.Download.CreateProjectTemplateSubForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_3D66.Download"
+        xmlns:c="clr-namespace:_3D66.Download.Controls" ResizeMode="NoResize"
+        mc:Ignorable="d" Background="{DynamicResource COLOR_MainBackground}" Foreground="White" FontSize="15"
+        Title="CreateProjectTemplateSubForm" Height="390" Width="250">
+    <Grid>
+        <StackPanel Margin="0,10,0,0">
+            <c:TitleTextRow TitleContent="名称：" x:Name="TEXT_Name"/>
+            <c:TitleTextRow TitleContent="长度：" x:Name="TEXT_Height"/>
+            <c:TitleTextRow TitleContent="宽度：" x:Name="TEXT_Width"/>
+            <c:TitleTextRow TitleContent="版本：" x:Name="TEXT_Version"/>
+            <c:TitleTextRow TitleContent="作者：" x:Name="TEXT_FromUser"/>
+            <c:TitleTextRow TitleContent="描述：" TextWrapping="Wrap" x:Name="TEXT_Text"/>
+            <Grid>
+                <c:TitleTextRow TitleContent="文件：" IsReadOnly="True" x:Name="TEXT_FilePath"/>
+                <Button HorizontalAlignment="Right"  VerticalAlignment="Center"  Style="{DynamicResource BT_TestButton}" Content="选择文件" Name="BT_SFile" Click="BT_SFile_Click"/>
+            </Grid>
+            <Grid>
+                <c:TitleTextRow TitleContent="图片：" IsReadOnly="True" x:Name="TEXT_ImagePath"/>
+                <Button HorizontalAlignment="Right" VerticalAlignment="Center"  Style="{DynamicResource BT_TestButton}" Content="选择图片" Name="BT_SImage" Click="BT_SImage_Click"/>
+            </Grid>
+            <ComboBox Name="LIST_PType"></ComboBox>
+        </StackPanel>
+        <Button Style="{DynamicResource BT_TestButton}" Content="确认" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100" Height="40" Margin="0,0,10,10" Name="BT_Selected" Click="BT_Selected_Click"/>
+    </Grid>
+</Window>

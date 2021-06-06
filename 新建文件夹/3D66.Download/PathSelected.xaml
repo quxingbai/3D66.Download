@@ -1,0 +1,25 @@
+﻿<Window x:Class="_3D66.Download.PathSelected"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_3D66.Download"
+        mc:Ignorable="d"
+        Title="PathSelected" MaxHeight="90" MaxWidth="450" MinHeight="90" MinWidth="450">
+    <Grid>
+        <StackPanel>
+            <Border BorderBrush="Gray" BorderThickness="0,0,0,0.5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="当前选择："/>
+                    <TextBox Name="TEXT_SelectPath"  Grid.Column="1" Style="{DynamicResource TEXT_NoStyleTextBox}"/>
+                </Grid>
+            </Border>
+        </StackPanel>
+        <Button Content="选择路径" Padding="7" HorizontalAlignment="Left" VerticalAlignment="Bottom" Name="BT_Select" Click="BT_Select_Click"/>
+        <Button Content="确定选择" Padding="7" HorizontalAlignment="Right" VerticalAlignment="Bottom" Name="BT_Next" Click="BT_Next_Click"/>
+    </Grid>
+</Window>
